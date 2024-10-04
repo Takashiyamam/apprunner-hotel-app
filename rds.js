@@ -16,6 +16,7 @@ function rds() {
   const secret = JSON.parse(config.secret.db_secret);
   rdsUrl = secret.host;
   console.log(`Connecting to RDS at ${rdsUrl}`);
+  console.log('The value of ENV is:', process.env);
   console.log(JSON.stringify(process.env,null,'\t'));
   
   rdsPool = mysql.createPool({
